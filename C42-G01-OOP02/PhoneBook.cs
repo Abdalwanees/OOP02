@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -132,6 +133,97 @@ namespace C42_G01_OOP02
                 }
             }
         }
+
+        //Indexer
+        //       :- IS a special Property
+        //          Named with key word this
+        //          Can take parameter
+        #region Indexer
+        public long this[string Name]
+        {
+            get
+            {
+                if (Names != null)
+                {
+                    for (int i = 0; i < Names.Length; i++)
+                    {
+                        if (Name == Names[i])
+                        {
+                            return Numbres[i];
+                        }
+                    }
+                }
+                return -1;
+            }
+            set
+            {
+                bool isSet = false;
+                if (Names != null)
+                {
+                    for (int i = 0; i < Names.Length; i++)
+                    {
+                        if (Name == Names[i])
+                        {
+                            Numbres[i] = value;
+                            isSet = true;
+                            break;
+                        }
+                    }
+                }
+                Console.WriteLine(isSet ? "Success [*_*]" : "Failed [-_-]");
+            }
+        }
+
+        public string this[long Number]
+        {
+            get
+            {
+                if (Numbres != null)
+                {
+                    for (int i = 0; i < Numbres.Length; i++)
+                    {
+                        if (Number == Numbres[i])
+                        {
+                            return Names[i];
+                        }
+                    }
+                }
+                return "-1";
+            }
+            set
+            {
+                bool isSet = false;
+                if (Numbres != null)
+                {
+                    for (int i = 0; i < Numbres.Length; i++)
+                    {
+                        if (Number == Numbres[i])
+                        {
+                            Names[i] = value;
+                            isSet = true;
+                            break;
+                        }
+                    }
+                }
+                Console.WriteLine(isSet ? "Success [*_*]" : "Failed [-_-]");
+            }
+        }
+
+        public string this[int index ,bool Print]
+        {
+            get
+            {
+                if (index >= 0 && index < Names.Length)
+                {
+                    return $"index : {index}\nName : {Names[index]}\nNumbre : {Numbres[index]}";
+                }
+                else
+                {
+                    return "Index out of bounds";
+                }
+            }
+        }
+        #endregion
     }
 
 }

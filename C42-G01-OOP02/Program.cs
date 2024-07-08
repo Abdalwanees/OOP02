@@ -6,6 +6,7 @@
         {
 
             #region 01 - Try all what we have learned in the lecture.
+            #region revision 
             //Access mofifier
             //  public   --> It can  accessible from any other code. There are no restrictions on their visibility..
             //  internal --> It can accessible only within the same assembly. This means that any code in the same project can access these members, but code in other projects (assemblies) cannot.
@@ -22,7 +23,8 @@
             //                        -- Events
             // Access Modifier Allowed Inside Struct (Private (Default) ,internal ,public)
             //Aceess Modifier Allowed inside class (Private (Default) ,internal ,public ,private protected ,protected , protected internal)
-            //////////////////////////
+            ////////////////////////// 
+            #endregion
             #region PhoneBook Without Indexer
             //PhoneBook Note = new PhoneBook(3);
             //Note.AddPerson(0, "maha", 123);
@@ -68,6 +70,21 @@
             //        Console.WriteLine("Invalid option!");
             //    }
             //}
+
+            #endregion
+
+            #region PhoneBook Using Indexer
+            //PhoneBook Note = new PhoneBook(3);
+            //Note.AddPerson(0, "maha", 123);
+            //Note.AddPerson(1, "Omer", 456);
+            //Note.AddPerson(2, "Amr", 789);
+
+            //Note["Omer"] = 963;
+            //Note[789] = "Wanees";
+
+            //Console.WriteLine(Note[0 ,true]);
+            //Console.WriteLine(Note[1,true]);
+            //Console.WriteLine(Note[2,true]);
 
             #endregion
             #endregion
