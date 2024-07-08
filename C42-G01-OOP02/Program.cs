@@ -25,6 +25,7 @@
             //Aceess Modifier Allowed inside class (Private (Default) ,internal ,public ,private protected ,protected , protected internal)
             ////////////////////////// 
             #endregion
+
             #region PhoneBook Without Indexer
             //PhoneBook Note = new PhoneBook(3);
             //Note.AddPerson(0, "maha", 123);
@@ -87,9 +88,53 @@
             //Console.WriteLine(Note[2,true]);
 
             #endregion
+
+            #region Class
+            // Class ==>
+            #endregion
             #endregion
 
+            #region Part 02
+            HiringDate hireDate1 = new HiringDate(15, 5, 2020);
+            HiringDate hireDate2 = new HiringDate(23, 11, 2018);
+            HiringDate hireDate3 = new HiringDate(5, 3, 2022);
+            HiringDate hireDate4 = new HiringDate(1, 10, 2023);
 
+            // Create an array of Employees
+            Employee[] empArr = new Employee[4];
+            empArr[0] = new Employee(1, "Omar Wael", SecurityLevel.DBA, 80000m, hireDate1, 'M');
+            empArr[1] = new Employee(2, "Saeed Ahmed", SecurityLevel.Guest, 40000m, hireDate2, 'M');
+            empArr[2] = new Employee(3, "Wanees Alsayed", SecurityLevel.Developer, 60000m, hireDate3, 'M');
+            empArr[3] = new Employee(4, "Malak Mohasin", SecurityLevel.Developer, 70000m, hireDate4, 'F');
+
+            // Print before sorting
+            Console.WriteLine("Before Sorting:");
+            foreach (Employee emp in empArr)
+            {
+                Console.WriteLine(emp);
+            }
+
+            // Sort employees by hire date
+            try
+            {
+                // Sort employees by hire date using the static comparison function
+                Array.Sort(empArr, Employee.CompareByHireDate);
+
+                // Print after sorting
+                Console.WriteLine("\nAfter Sorting:");
+                foreach (Employee emp in empArr)
+                {
+                    Console.WriteLine(emp);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
         }
+        #endregion
+
+
     }
+
 }
